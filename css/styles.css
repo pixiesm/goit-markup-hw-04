@@ -45,8 +45,7 @@ header {
   margin-left: auto;
   margin-right: auto;
 }
-/*  
-*/
+
 .container.header-container {
   display: flex;
   justify-content: space-between;
@@ -87,6 +86,7 @@ header {
   margin-right: 332px;
 }
 .nav-link {
+  position: relative;
   display: block;
   padding: 24px 0;
   font-weight: 500;
@@ -95,11 +95,24 @@ header {
   letter-spacing: 0.02em;
   color: #2e2f42;
 }
+
 .nav-link:hover,
 .nav-link:focus {
   color: #404bbf;
 }
-
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  background-color: #404bbf;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  bottom: -1px;
+  left: 0;
+}
+.nav-link.active {
+  color: #404bbf;
+}
 address {
   font-style: normal;
 }
@@ -123,14 +136,24 @@ address {
 }
 
 /* main */
-/* section 1 */
+/* hero section */
 .section {
   padding-top: 120px;
   padding-bottom: 120px;
 }
 .hero {
   padding: 188px 0;
-  background-color: #2e2f42;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url("../images/bg-hero-image.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 1440px;
+  margin: auto;
 }
 .hero-container {
   display: flex;
@@ -259,7 +282,35 @@ address {
   flex-direction: column;
   gap: 8px;
   width: 360px;
+  /* position: relative;
+  overflow: hidden; */
 }
+
+.portfolio-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay-text {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  padding: 40px 32px;
+  position: absolute;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #4d5ae5;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-list-item:hover .overlay-text {
+  transform: translateY(0%);
+}
+
 .portfolio-item-container {
   width: 360px;
   display: flex;
