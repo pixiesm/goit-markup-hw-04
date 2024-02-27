@@ -38,6 +38,8 @@ header {
 }
 .page-header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .container {
   width: 1158px;
@@ -382,7 +384,10 @@ address {
 .footer-container {
   display: flex;
   justify-content: flex-start;
-  gap: 120px;
+  align-items: baseline;
+}
+.footer-text-container {
+  margin-right: 120px;
 }
 .footer-text-container .logo-footer {
   display: inline-block;
@@ -411,6 +416,7 @@ address {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #fff;
+  margin-bottom: 16px;
 }
 .links-list {
   display: flex;
@@ -424,7 +430,13 @@ address {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #4d5ae5;
+  background-color: #404bbf;
+  fill: #fff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.links-list-link:hover {
+  background-color: #31d0aa;
 }
 
 .visually-hidden {
