@@ -303,7 +303,7 @@ address {
   fill: #f4f4fd;
 }
 .social-list-link:hover,
-.social-list-link:hover {
+.social-list-link:focus {
   background-color: #404bbf;
 }
 
@@ -340,9 +340,9 @@ address {
   gap: 8px;
   width: 360px;
   border: 1px solid #e7e9fc;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), */
 
 .portfolio-overlay {
   position: relative;
